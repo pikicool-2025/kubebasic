@@ -1,0 +1,15 @@
+  GNU nano 6.2                                                                                 apache-service.yml                                                                                           
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache-service
+  namespace: apache
+spec:
+  selector:
+    app: apache-dep
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+
